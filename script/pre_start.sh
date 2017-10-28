@@ -6,13 +6,11 @@
 # done
 
 if [ "${RUN_MIGRATIONS}" == "true" ]; then
-  echo "Migrating database!"
   ./bin/exonk8s migrate
 fi;
 
 if [ "${RUN_SEEDS}" == "true" ]; then
   if [ "${PG_DATABASE}" != "exonk8s_production" ]; then
-    echo "Seeding database!"
     ./bin/exonk8s seed
   else
     (>&2 echo "[WARNING] You tried to seed production!")

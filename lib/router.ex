@@ -1,6 +1,7 @@
 defmodule ExOnK8s.Router do
   use Plug.Router
 
+  plug Plug.Logger
   plug :match
   plug :dispatch
 
