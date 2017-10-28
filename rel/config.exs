@@ -3,7 +3,7 @@ Path.join(["rel", "plugins", "*.exs"])
 |> Enum.map(&Code.eval_file(&1))
 
 use Mix.Releases.Config,
-    default_release: :default,
+    default_release: :exonk8s,
     default_environment: :prod
 
 environment :prod do
