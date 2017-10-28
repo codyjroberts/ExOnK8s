@@ -21,7 +21,8 @@ defmodule ExOnK8s.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.1.0"},
-      {:plug, "~> 1.4"}
+      {:plug, "~> 1.4"},
+      {:distillery, "~> 1.4", runtime: false}
     ]
   end
 end
