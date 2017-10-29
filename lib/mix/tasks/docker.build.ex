@@ -8,7 +8,17 @@ defmodule Mix.Tasks.Docker.Build do
   use Mix.Task
   alias Mix.Project
 
-  def run(_args) do
+  def run(args) do
+    {_opts, args, _} = OptionParser.parse(args)
+
+    case args do
+      [] -> build()
+      _ ->
+        Mix.raise "Invalid arguments, expected: mix docker.build"
+    end
+  end
+
+  def build do
     app_name =
       Project.config[:app]
       |> Atom.to_string()
@@ -26,7 +36,7 @@ defmodule Mix.Tasks.Docker.Build do
       "-t",
       "#{app_name}:#{sha}",
       "."
-    ], into: IO.stream(:stdio, :line))
+    ], into: IO.stream(:stdio, :line), env: [{"MIX_ENV", "prod"}])
 
     System.cmd("docker", [
       "tag",

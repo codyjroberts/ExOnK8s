@@ -7,7 +7,8 @@ defmodule ExOnK8s.Mixfile do
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -23,6 +24,12 @@ defmodule ExOnK8s.Mixfile do
       {:cowboy, "~> 1.1.0"},
       {:plug, "~> 1.4"},
       {:distillery, "~> 1.4", runtime: false}
+    ]
+  end
+
+  defp aliases do
+    [
+      shipit: ["docker.build", "k8s.deploy"]
     ]
   end
 end
