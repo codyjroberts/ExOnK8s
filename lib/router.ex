@@ -5,6 +5,6 @@ defmodule ExOnK8s.Router do
   plug :match
   plug :dispatch
 
-  match "/", do: send_resp(conn, 200, "hello")
+  match "/", to: ExOnK8s.Hello
   match _, do: send_resp(conn, 404, "not found")
 end
