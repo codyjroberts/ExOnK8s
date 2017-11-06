@@ -20,8 +20,6 @@ defmodule ExOnK8s.MusicianController do
   end
 
   def route("GET", [id], conn) do
-    ExOnK8s.Foo.lazy() # Demonstrate lazy loading
-
     musician =
       Musician
       |> Repo.get(String.to_integer(id))

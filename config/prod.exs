@@ -9,5 +9,5 @@ config :exonk8s, ExOnK8s.Repo,
   password: "${PG_PASSWORD}",
   database: "${PG_DATABASE}",
   hostname: "${PG_HOSTNAME}",
-  port: "${PG_PORT}",
+  port: 5432,
   pool_size: 10

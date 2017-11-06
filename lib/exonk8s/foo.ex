@@ -4,7 +4,7 @@ defmodule ExOnK8s.Foo do
   require Logger
 
   def on_load do
-    IO.puts "Hello Loaded"
+    IO.puts "Foo Loaded"
     :ok
   end
 

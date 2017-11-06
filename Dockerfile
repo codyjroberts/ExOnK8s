@@ -28,10 +28,6 @@ ARG VRSN
 
 ENV MIX_ENV=prod
 
-RUN apk update && \
-    apk --no-cache --update add bash libgcc libstdc++ && \
-    rm -rf /var/cache/apk/*
-
 WORKDIR /app
 
 COPY --from=builder /opt/app/_build/prod/rel/exonk8s/releases/$VRSN/exonk8s.tar.gz ./

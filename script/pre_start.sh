@@ -10,7 +10,7 @@ if [ "${RUN_MIGRATIONS}" == "true" ]; then
 fi;
 
 if [ "${RUN_SEEDS}" == "true" ]; then
-  if [ "${PG_DATABASE}" != "exonk8s_production" ]; then
+  if [ "${PG_DATABASE}" != "exonk8s_prod" ]; then
     ./bin/exonk8s seed
   else
     (>&2 echo "[WARNING] You tried to seed production!")

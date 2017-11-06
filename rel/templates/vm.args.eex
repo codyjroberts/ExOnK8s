@@ -1,5 +1,5 @@
 ## Node name
--name <%= release_name %>@127.0.0.1
+-name exonk8s@127.0.0.1
 
 ## Node cookie, used for distribution
 -setcookie ${POD_COOKIE}

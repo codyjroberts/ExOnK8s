@@ -14,8 +14,8 @@ defmodule ExOnK8s.Mixfile do
 
   def application do
     [
-      extra_applications: [:logger],
-      mod: {ExOnK8s, []}
+      mod: {ExOnK8s, []},
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
