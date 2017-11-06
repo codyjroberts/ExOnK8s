@@ -2,10 +2,11 @@ FROM bitwalker/alpine-elixir:1.5.2
 
 EXPOSE 4001
 
+ENV MIX_ENV=docker
+
 ADD mix.exs mix.lock ./
 RUN mix do deps.get, deps.compile
 
 COPY config ./config
 COPY lib ./lib
-
-CMD ["iex", "-S", "mix"]
+COPY priv ./priv

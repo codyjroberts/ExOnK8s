@@ -5,7 +5,7 @@ defmodule ExOnK8s.Musician do
   schema "musicians" do
     field :name, :string
     field :instrument, :string
-    timestamps
+    timestamps()
   end
 end
 

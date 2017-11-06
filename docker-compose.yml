@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: postgres
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.simple
+    command: mix run --no-halt
+    ports:
+      - "4001:4001"
+    depends_on:
+      - db
