@@ -11,9 +11,13 @@ defmodule ExOnK8s.ReleaseCommands do
 
     seed_script = seed_path(@app)
     if File.exists?(seed_script) do
-      Logger.info "Running seed script.."
+      Logger.info "running seed script.."
       Code.eval_file(seed_script)
+      Logger.info "seeding complete"
+    else
+      Logger.info "seeding failed"
     end
+
 
     stop()
   end

@@ -32,6 +32,7 @@ defmodule ExOnK8s.Mixfile do
 
   defp aliases do
     [
+      "ecto.setup": ["ecto.create --quiet", "ecto.migrate", "run priv/repos/seeds.exs"],
       shipit: ["docker.build", "k8s.deploy"]
     ]
   end

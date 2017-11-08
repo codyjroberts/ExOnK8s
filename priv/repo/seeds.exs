@@ -7,7 +7,8 @@ alias ExOnK8s.{Repo, Musician}
 database = Application.get_env(:exonk8s, ExOnK8s.Repo)[:database]
 
 if database == "exonk8s_prod" do
-  exit(:careful_dude_theres_a_production_environment_here!)
+  #exit(:hey_careful_man_theres_a_production_environment_here!)
+  IO.puts "Hey, careful man, theres a production environment here!"
 end
 
 Repo.delete_all(Musician)
