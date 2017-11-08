@@ -34,7 +34,6 @@ COPY --from=builder /opt/app/_build/prod/rel/exonk8s/releases/$VRSN/exonk8s.tar.
 RUN tar xvf exonk8s.tar.gz
 
 EXPOSE 4001
-# EXPOSE 5432
 ENV PORT=4001 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/sh
 
 ENTRYPOINT ["bin/exonk8s"]
