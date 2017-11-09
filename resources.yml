@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: exonk8s
-        image: exonk8s:764dc42da93f433377caffd5d1f3c34b71d6dec3
+        image: exonk8s:latest
         args:
         - foreground
         imagePullPolicy: Never
